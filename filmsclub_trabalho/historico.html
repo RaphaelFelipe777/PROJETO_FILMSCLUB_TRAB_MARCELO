@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Sessões - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .session-history-item {
+            background-color: var(--color-light-bg);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            border-left: 5px solid transparent;
+            cursor: pointer;
+            transition: border-left 0.2s;
+        }
+        .session-history-item:hover {
+            border-left: 5px solid var(--color-primary);
+        }
+        .history-date {
+            font-size: 0.8em;
+            color: var(--color-text-fade);
+            display: block;
+            margin-bottom: 5px;
+        }
+        .history-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Quebra no celular */
+        }
+        .history-details strong {
+            color: var(--color-text-light);
+            font-size: 1.1em;
+        }
+        .history-details .stats {
+            text-align: right;
+            font-size: 0.9em;
+            color: var(--color-text-fade);
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html" class="active">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <h2>Histórico de Sessões</h2>
+                <p style="margin-bottom: 30px; color: var(--color-text-fade);">Registro de todos os filmes exibidos e participação dos membros.</p>
+
+                <div class="session-history-item">
+                    <span class="history-date">15 de Setembro de 2024</span>
+                    <div class="history-details">
+                        <strong>Pulp Fiction (1994)</strong>
+                        <div class="stats">
+                            <p style="color: #ffc107;">⭐ 4.7/5.0</p>
+                            <p>👥 Participação: 35 membros</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="session-history-item">
+                    <span class="history-date">01 de Setembro de 2024</span>
+                    <div class="history-details">
+                        <strong>A Chegada (Arrival) (2016)</strong>
+                        <div class="stats">
+                            <p style="color: #ffc107;">⭐ 4.5/5.0</p>
+                            <p>👥 Participação: 41 membros</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 CineClube. Centralize seu clube.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-header {
+            background-color: var(--color-medium);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card.next-session {
+            border-left: 5px solid var(--color-primary);
+        }
+        .card.notifications li {
+            border-bottom: 1px solid #333;
+            padding: 8px 0;
+            color: var(--color-text-fade);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html" class="active">🚀 Dashboard</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <div class="dashboard-header">
+                    <h2>Bem-vindo(a), [Nome do Membro]!</h2>
+                    <p>Aqui estão as novidades do seu CineClube.</p>
+                </div>
+
+                <div class="dashboard-layout">
+                    <div class="card next-session">
+                        <h3>Próxima Exibição</h3>
+                        <h4 style="color: var(--color-text-light);">Blade Runner 2049</h4>
+                        <p>📅 Data: 15 de Outubro | 🕖 Horário: 19:30</p>
+                        <p>📍 Local: Sala Virtual #3</p>
+                        <button class="btn-primary btn-confirmar-presenca" style="margin-top: 15px;">Confirmar Presença</button>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #5cb85c;">✅ 28 pessoas já confirmaram</p>
+                    </div>
+
+                    <div class="card votation-status">
+                        <h3>Votação em Andamento</h3>
+                        <p>Ajude a escolher o tema do próximo mês!</p>
+                        <p style="color: #ffc107;">⏱️ Encerra em: 3 dias e 4 horas</p>
+                        <a href="votacao.html" class="btn-primary" style="margin-top: 15px;">Ver e Votar</a>
+                    </div>
+
+                    <div class="card notifications">
+                        <h3>Notificações Recentes</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>**Lembrete:** Sessão de 'Blade Runner' amanhã!</li>
+                            <li>**Resultado:** 'Cinema Noir' venceu a votação.</li>
+                            <li>**Novo:** Administrador criou uma nova votação.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 CineClube. Centralize seu clube.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

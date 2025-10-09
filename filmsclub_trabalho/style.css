@@ -1,0 +1,331 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+:root {
+    --color-primary: #e50914;
+    --color-dark: #0f0f0f;
+    --color-medium: #1f1f1f;
+    --color-light-bg: #2a2a2a;
+    --color-text-light: #f0f0f0;
+    --color-text-fade: #999999;
+    --border-radius: 6px;
+}
+
+body {
+    line-height: 1.5;
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: var(--color-text-light);
+    font-weight: 700;
+}
+h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--color-text-light);
+}
+
+/* --- Cabeçalho (Mobile) --- */
+.header {
+    background-color: var(--color-dark);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 2em;
+    color: var(--color-primary);
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+
+.menu-toggle, .btn-mobile-login {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.6em;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+@media (min-width: 1024px) {
+    .header { display: none; }
+}
+
+/* --- Sidebar (Barra Lateral) --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--color-medium);
+    padding: 30px 20px;
+    z-index: 1000;
+    transform: translateX(-100%);
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-close {
+    font-size: 2.5em;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--color-text-fade);
+}
+
+.sidebar .logo {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    color: var(--color-text-fade);
+    border-left: 3px solid transparent;
+}
+
+.sidebar nav a:hover {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-light);
+}
+
+.sidebar nav a.active {
+    background-color: var(--color-light-bg);
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    font-weight: bold;
+}
+
+.sidebar .logout {
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    margin: 0 10%;
+    background-color: var(--color-medium);
+    border: 1px solid var(--color-text-fade);
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    color: var(--color-text-fade);
+}
+
+.sidebar .logout:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-color: var(--color-primary);
+}
+
+/* --- Layout Principal --- */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    padding-top: 10px;
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        transform: translateX(0) !important;
+    }
+    .main-layout {
+        padding-left: 250px;
+        padding-top: 0;
+    }
+    .menu-toggle, .btn-mobile-login {
+        display: none !important;
+    }
+}
+
+/* --- Botões e Interação --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Componentes --- */
+.card {
+    background-color: var(--color-light-bg);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid transparent;
+}
+
+.card:hover {
+    border-top-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.card p {
+    color: var(--color-text-fade);
+}
+
+/* Formulário */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    font-size: 0.95em;
+}
+.form-group input {
+    width: 100%;
+    padding: 15px 12px;
+    border: 1px solid #444;
+    border-radius: var(--border-radius);
+    background-color: #1a1a1a;
+    color: var(--color-text-light);
+    font-size: 1em;
+}
+
+/* Cards de Filmes/Sessões */
+.movie-card {
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    background-color: var(--color-medium);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+}
+
+.movie-card:hover img {
+    filter: brightness(1.1);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.btn-vote {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--color-dark);
+}
+
+.btn-vote:hover {
+    background-color: #4cae4c;
+}
+
+/* Histórico e Agenda Lista */
+.session-item {
+    background-color: var(--color-light-bg);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid transparent;
+    cursor: pointer;
+}
+
+.session-item:hover {
+    border-left-color: var(--color-primary);
+    background-color: #313131;
+}
+
+.session-date {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 5px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    width: 70px;
+    margin-right: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-text-fade);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #2a2a2a;
+    font-size: 0.9em;
+}
+
+/* Layouts de Grid */
+.votation-grid, .dashboard-layout, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}

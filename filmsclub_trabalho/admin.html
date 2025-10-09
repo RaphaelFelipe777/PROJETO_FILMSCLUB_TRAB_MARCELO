@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        .admin-action-card {
+            background-color: var(--color-light-bg);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        .btn-action {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub (Admin)</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html" class="active">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <div class="admin-header">
+                    <h2>Gerenciamento do Clube</h2>
+                    <p>Ferramentas exclusivas para administradores.</p>
+                </div>
+
+                <div class="admin-action-card">
+                    <h3>Agenda e Exibições</h3>
+                    <p>Crie novas sessões e edite eventos.</p>
+                    <a href="#" class="btn-primary btn-action">Criar Nova Sessão</a>
+                    <a href="#" class="btn-primary btn-action" style="background-color: #007bff;">Gerenciar Agenda</a>
+                </div>
+
+                <div class="admin-action-card">
+                    <h3>Votações</h3>
+                    <p>Inicie ou encerre votações para o próximo filme/tema.</p>
+                    <a href="#" class="btn-primary btn-action">Criar Nova Votação</a>
+                </div>
+
+                <div class="admin-action-card">
+                    <h3>Membros e Dados</h3>
+                    <p>Aprove novos membros e veja estatísticas de participação.</p>
+                    <a href="#" class="btn-primary btn-action" style="background-color: #6c757d;">Gerenciar Membros</a>
+                    <a href="#" class="btn-primary btn-action" style="background-color: #6c757d;">Relatórios de Presença</a>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 CineClube. Painel Administrativo.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

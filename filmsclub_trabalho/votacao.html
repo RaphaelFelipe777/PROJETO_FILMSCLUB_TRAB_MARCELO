@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votações Ativas - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .votation-header {
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+        .countdown {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .movie-card {
+            background-color: var(--color-light-bg);
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .movie-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #444;
+        }
+        .movie-info {
+            padding: 15px;
+        }
+        .btn-vote {
+            width: 100%;
+            padding: 12px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .votation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html" class="active">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <div class="votation-header">
+                    <h2>Votação Ativa</h2>
+                    <p style="color: var(--color-text-fade);">Escolha o filme que será exibido na próxima sessão temática.</p>
+                    <div class="countdown">⏱️ Encerra em: 3 dias e 12 horas</div>
+                </div>
+
+                <div class="votation-grid">
+                    <div class="movie-card">
+                        <img src="placeholder-movie1.jpg" alt="O Exorcista">
+                        <div class="movie-info">
+                            <h4>O Exorcista (1973)</h4>
+                            <p>Sinopse: Uma jovem é possuída por uma entidade demoníaca...</p>
+                            <p style="font-size: 0.8em; color: var(--color-primary); margin-bottom: 15px;">**45 Votos** (Líder!)</p>
+                            <button class="btn-vote">VOTAR</button>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <img src="placeholder-movie2.jpg" alt="Psicose">
+                        <div class="movie-info">
+                            <h4>Psicose (1960)</h4>
+                            <p>Sinopse: Marion Crane se hospeda no Motel Bates...</p>
+                            <p style="font-size: 0.8em; color: var(--color-text-fade); margin-bottom: 15px;">32 Votos</p>
+                            <button class="btn-vote" style="background-color: var(--color-medium); border: 1px solid #5cb85c;">Votar nesta opção</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 CineClube. Centralize seu clube.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

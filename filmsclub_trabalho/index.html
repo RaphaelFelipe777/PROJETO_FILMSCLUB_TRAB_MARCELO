@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineClube - Organização de Sessões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Login</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html" class="active">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Entrar / Login</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                
+                <section class="hero card" style="background-color: var(--color-medium); text-align: center; padding: 40px;">
+                    <h2>Seu clube de cinema, organizado e conectado.</h2>
+                    <p style="color: var(--color-text-fade); margin-bottom: 20px;">Centralize programação, votações e presença em um só lugar. Uma solução prática e moderna.</p>
+                    <a href="login.html" class="btn-primary">Acesse Agora</a>
+                </section>
+
+                <section class="features">
+                    <h3>Funcionalidades Principais</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div class="feature-card card">
+                            <h4>Login Personalizado</h4>
+                            <p>Administradores criam sessões, e membros participam e votam.</p>
+                        </div>
+                        <div class="feature-card card">
+                            <h4>Agenda de Exibições</h4>
+                            <p>Calendário organizado com notificações automáticas para eventos.</p>
+                        </div>
+                        <div class="feature-card card">
+                            <h4>Notificações Inteligentes</h4>
+                            <p>Lembretes via sistema ou e-mail para manter todos informados.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 CineClube. Todos os direitos reservados.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
