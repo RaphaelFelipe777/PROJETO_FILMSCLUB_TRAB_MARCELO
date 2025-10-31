@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Filmes - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o status na lista de histórico */
+        .status-emanalise {
+            color: #ffc107;
+            background-color: rgba(255, 193, 7, 0.1);
+        }
+        .status-aprovado {
+            color: #5cb85c;
+            background-color: rgba(92, 184, 92, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="pedidos.html" class="active">📝 Solicitações</a> <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <h2>🎥 Solicitação de Filmes para o Clube</h2>
+                
+                <div class="pedidos-grid">
+                    
+                    <div id="div-consulta" class="card">
+                        <h3>🔍 Buscar Sugestões Anteriores</h3>
+                        <p style="margin-bottom: 15px;">Pesquise se um filme já foi sugerido ou está em análise.</p>
+                        <form id="consulta-form">
+                            <div class="form-group">
+                                <label for="consulta-input">Título do Filme</label>
+                                <input type="text" id="consulta-input" placeholder="Ex: Metrópolis (1927)" required>
+                            </div>
+                            <button type="submit" class="btn-primary" style="margin-top: 15px;">Buscar Filme</button>
+                        </form>
+                    </div>
+
+                    <div id="div-solicitar" class="card">
+                        <h3>✨ Sugerir Novo Filme</h3>
+                        <p style="margin-bottom: 15px;">Clique para adicionar um título à fila de análise da administração.</p>
+                        <button id="realizar-pedido-btn" class="btn-primary" style="width: 100%;">Sugerir Filme</button>
+                    </div>
+                </div>
+
+                <div id="div-historico-pedidos" class="card">
+                    <h3>📜 Histórico de Sugestões Recentes</h3>
+                    <p style="margin-bottom: 15px;">Suas últimas sugestões e status de aprovação.</p>
+                    <ul id="historico-pedidos" class="historico-pedidos">
+                        <li class="history-item">
+                            <strong>Sugestão #105</strong> 
+                            <span>Filme: **O Enigma de Kaspar Hauser**</span> 
+                            <span class="status status-aprovado">Aprovado</span> 
+                            <span class="date">01/10/2025</span>
+                        </li>
+                        <li class="history-item">
+                            <strong>Sugestão #104</strong> 
+                            <span>Filme: **Tempo de Violência**</span> 
+                            <span class="status status-emanalise">Em Análise</span> 
+                            <span class="date">25/09/2025</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="div-acesso" class="card" style="background-color: var(--color-medium);">
+                    <h3>🔐 Verificação de Acesso</h3>
+                    <p>O botão **Sugerir Filme** verifica se você está logado via JavaScript e localStorage.</p>
+                    <a href="login.html" class="btn-primary" style="margin-top: 10px;">Ir para Login</a>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 FilmsClub. Sistema de Solicitações de Filmes.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

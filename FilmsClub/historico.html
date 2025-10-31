@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para o Histórico de Filmes */
+        .history-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .history-item-card {
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--color-medium);
+        }
+
+        .history-item-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85);
+        }
+
+        .movie-details {
+            padding: 15px;
+        }
+
+        .movie-details h4 {
+            color: var(--color-primary);
+            margin-bottom: 5px;
+            font-size: 1.3em;
+        }
+
+        .movie-details p {
+            font-size: 0.9em;
+            color: var(--color-text-fade);
+            margin-top: 5px;
+        }
+
+        .rating {
+            font-size: 1.1em;
+            color: #ffc107; /* Amarelo para simular estrelas/avaliação */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="pedidos.html">📝 Solicitações</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html" class="active">📜 Histórico</a> <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <h2>📜 Histórico de Filmes Exibidos</h2>
+                
+                <div class="card" style="margin-bottom: 30px;">
+                    <p>Aqui você encontra todos os filmes que já foram tema de nossas sessões e votações.</p>
+                </div>
+
+                <div class="history-list">
+                    
+                    <div class="card history-item-card">
+                        <img src="https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABcp2FvSKmIbHSgzRleToFCRtEZtOQkIawcU_jCIJlWlDl2Ij3LJR5TOBneMfg76Fy1cr8Zvjwrf-GDqW5_BoQzYZUZhcbnxRoPHK.jpg?r=99c" alt="Blade Runner 2049">
+                        <div class="movie-details">
+                            <h4>Blade Runner 2049</h4>
+                            <p>Exibido em: 29 de Setembro, 2025</p>
+                            <div class="rating">⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card history-item-card">
+                        <img src="https://cdn.prod.website-files.com/60ff690cd7b0537edb99a29a/66b65c9ad4c3ca34a89ad436_Filme%20A%20Chegada.jpg" alt="A Chegada (Arrival)">
+                        <div class="movie-details">
+                            <h4>A Chegada (Arrival)</h4>
+                            <p>Exibido em: 10 de Setembro, 2025</p>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+
+                    <div class="card history-item-card">
+                        <img src="https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABXlGE_81TVyWadhxe1mRoHwHbu-k4-niKIcCPL3MDPgdSBfNsSxNF1HqtOZDu5czYMzMY_Z2a7S08C1RGwI_CX0z-MAR-a1dVdHz.jpg?r=835" alt="Interstelar">
+                        <div class="movie-details">
+                            <h4>Interstelar</h4>
+                            <p>Exibido em: 25 de Agosto, 2025</p>
+                            <div class="rating">⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+
+                    <div class="card history-item-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvjNvXcu9SILL0bgKBJ30qjAfbff-vgr0fYslMHveqyLoXZ9i6wQYO0itepKfs-iUZvLw&usqp=CAU" alt="Mad Max: Estrada da Fúria">
+                        <div class="movie-details">
+                            <h4>Mad Max: Estrada da Fúria</h4>
+                            <p>Exibido em: 05 de Agosto, 2025</p>
+                            <div class="rating">⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 FilmsClub. Memórias do cinema.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

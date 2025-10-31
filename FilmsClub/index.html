@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmsClub - O seu clube de filmes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Entrar</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html" class="active">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="pedidos.html">📝 Solicitações</a> <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Entrar / Login</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <h2>🎬 Bem-vindo ao FilmsClub</h2>
+                
+                <div class="card">
+                    <h3>Filme Destaque da Semana</h3>
+                    <p>Prepare-se para a próxima sessão de votação. O tema desta semana é **Ficção Científica Distópica**.</p>
+                    <a href="votacao.html" class="btn-primary" style="margin-top: 15px;">Ir para Votação</a>
+                </div>
+
+                <div class="features-grid">
+                    <div class="card">
+                        <h3>Próxima Sessão</h3>
+                        <p>Veja os detalhes da próxima exibição e confirme sua presença no Dashboard.</p>
+                        <a href="agenda.html" style="color: var(--color-primary); margin-top: 10px; display: inline-block;">Ver Agenda Completa</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Comunidade</h3>
+                        <p>Participe dos debates e veja os filmes mais votados pelos membros do clube.</p>
+                        <a href="historico.html" style="color: var(--color-primary); margin-top: 10px; display: inline-block;">Acessar Histórico</a>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Acesse sua Conta</h3>
+                    <p>Faça login para votar, confirmar presença e gerenciar seus pedidos.</p>
+                    <a href="login.html" class="btn-primary" style="margin-top: 15px; background-color: var(--color-light-bg); border: 1px solid var(--color-primary);">Entrar Agora</a>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 FilmsClub. Desenvolvido com paixão por cinema.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

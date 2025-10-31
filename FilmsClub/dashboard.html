@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-header {
+            margin-bottom: 30px;
+        }
+        .dashboard-layout {
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 768px) {
+            .dashboard-layout {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+        .notifications ul {
+            list-style: none;
+            padding: 0;
+        }
+        .notifications li {
+            border-bottom: 1px solid #333;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html" class="active">🚀 Dashboard</a>
+                <a href="pedidos.html">📝 Solicitações</a> <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container">
+                <header class="dashboard-header">
+                    <h2>Bem-vindo(a), Membro!</h2> 
+                </header>
+                
+                <div class="dashboard-layout">
+                    
+                    <div class="main-column">
+                        <div class="card">
+                            <h3>Próxima Sessão: Blade Runner 2049</h3>
+                            <p>Data: 15 de Outubro | 20:00h</p>
+                            <p style="margin-top: 10px; color: var(--color-text-fade);">Assista ao trailer e confirme sua presença para reservar seu lugar.</p>
+                            <button class="btn-primary btn-confirmar-presenca" style="margin-top: 15px;">Confirmar Presença</button>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Votação Ativa</h3>
+                            <p>A votação para o próximo filme (Tema: Cyberpunk) termina em 3 dias.</p>
+                            <a href="votacao.html" class="btn-primary" style="margin-top: 15px; background-color: #555;">Ir para Votação</a>
+                        </div>
+                    </div>
+                    
+                    <div class="notifications">
+                        <div class="card">
+                            <h3>🚨 Notificações Recentes</h3>
+                            <ul>
+                                <li>**Lembrete:** Sessão Blade Runner em 2 dias.</li>
+                                <li>**Atualização:** Seu voto foi contabilizado com sucesso.</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 FilmsClub. Seu Painel de Controle.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

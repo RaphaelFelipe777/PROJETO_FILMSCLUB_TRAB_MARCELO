@@ -1,0 +1,371 @@
+/* ========================================= */
+/* 1. RESET E CONFIGURAÇÕES GLOBAIS (DARK MODE) */
+/* ========================================= */
+
+* {
+    /* Box-sizing para garantir que padding e border não aumentem o tamanho total */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Fonte moderna. Sugestão: usar Google Fonts (e.g., Montserrat) */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* Transição suave para todas as propriedades (animações) */
+    transition: all 0.3s ease-in-out;
+}
+
+:root {
+    /* Paleta de Cores */
+    --color-primary: #e50914;    /* Vermelho Netflix */
+    --color-dark: #0f0f0f;       /* Fundo Principal */
+    --color-medium: #1f1f1f;     /* Fundo da Sidebar / Cards Secundários */
+    --color-light-bg: #2a2a2a;   /* Fundo de Cards / Elementos Interativos */
+    --color-text-light: #f0f0f0; /* Texto Principal */
+    --color-text-fade: #999999;  /* Texto Secundário/Pequeno */
+    --border-radius: 6px;
+}
+
+body {
+    line-height: 1.5;
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Tipografia */
+h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* ========================================= */
+/* 2. LAYOUT E BARRA LATERAL (SIDEBAR) */
+/* ========================================= */
+
+/* Mobile First: Header visível */
+.header {
+    background-color: var(--color-dark);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 2em;
+    color: var(--color-primary);
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+
+.menu-toggle, .btn-mobile-login {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.6em;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* Estrutura Principal de Layout */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 60px; /* Espaço para o Header Mobile */
+}
+
+/* Sidebar (Menu lateral) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--color-medium);
+    padding: 30px 20px;
+    z-index: 1000;
+    transform: translateX(-100%); /* Esconde a sidebar no mobile por padrão */
+}
+
+.sidebar.active {
+    transform: translateX(0); /* Mostra a sidebar no mobile */
+}
+
+.sidebar-close {
+    font-size: 2.5em;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--color-text-fade);
+    display: none; /* Oculto por padrão, visível apenas com JS no mobile */
+}
+
+.sidebar.active .sidebar-close {
+    display: block;
+}
+
+.sidebar .logo {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    color: var(--color-text-fade);
+    border-left: 3px solid transparent;
+}
+
+.sidebar nav a:hover {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-light);
+}
+
+.sidebar nav a.active {
+    background-color: var(--color-light-bg);
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    font-weight: bold;
+}
+
+.sidebar .logout {
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    margin: 0 10%;
+    background-color: var(--color-medium);
+    border: 1px solid var(--color-text-fade);
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    color: var(--color-text-fade);
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    padding-top: 10px;
+}
+
+/* ========================================= */
+/* 3. RESPONSIVIDADE (Desktop - Acima de 1024px) */
+/* ========================================= */
+
+@media (min-width: 1024px) {
+    /* Header Mobile oculto */
+    .header { display: none; }
+    .menu-toggle, .btn-mobile-login { display: none !important; }
+
+    /* Sidebar Fixa no Desktop */
+    .sidebar {
+        transform: translateX(0) !important; /* Força a sidebar a aparecer no desktop */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Afasta o conteúdo principal para não ficar por baixo da sidebar */
+    .main-layout {
+        padding-left: 250px; 
+        padding-top: 0;
+    }
+}
+
+/* ========================================= */
+/* 4. COMPONENTES E ANIMAÇÕES */
+/* ========================================= */
+
+/* Botões */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+    transform: scale(1.02); /* Animação sutil de aumento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-light-bg);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid transparent;
+}
+
+.card:hover {
+    border-top-color: var(--color-primary);
+    transform: translateY(-2px); /* Animação sutil de elevação */
+}
+
+/* Formulário e Inputs */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    font-size: 0.95em;
+}
+.form-group input {
+    width: 100%;
+    padding: 15px 12px;
+    border: 1px solid #444;
+    border-radius: var(--border-radius);
+    background-color: #1a1a1a;
+    color: var(--color-text-light);
+    font-size: 1em;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-text-fade);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #2a2a2a;
+    font-size: 0.9em;
+}
+
+/* ========================================= */
+/* 5. TOAST NOTIFICATION SYSTEM */
+/* ========================================= */
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-light);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    min-width: 280px;
+    opacity: 0;
+    transform: translateX(100%); /* Começa fora da tela */
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0); /* Entra na tela */
+}
+
+.toast-icon {
+    font-size: 1.2em;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+/* Modificadores de Status do Toast */
+.toast.success { border-left-color: #5cb85c; }
+.toast.success .toast-icon { color: #5cb85c; }
+
+.toast.error { border-left-color: #dc3545; }
+.toast.error .toast-icon { color: #dc3545; }
+
+
+/* ========================================= */
+/* 6. ESTILOS ESPECÍFICOS (Pedidos) */
+/* ========================================= */
+
+.pedidos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+@media (min-width: 768px) {
+    .pedidos-grid {
+        grid-template-columns: 2fr 1fr; /* Layout em duas colunas no desktop */
+    }
+}
+
+.historico-pedidos {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.history-item {
+    background-color: var(--color-medium);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+.history-item strong {
+    color: var(--color-primary);
+}
+.status {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+.status-pendente {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+.status-concluido {
+    color: #5cb85c;
+    background-color: rgba(92, 184, 92, 0.1);
+}

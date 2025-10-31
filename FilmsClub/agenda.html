@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Eventos - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a lista de eventos da Agenda */
+        .event-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .event-item {
+            background-color: var(--color-medium);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .event-item:hover {
+            background-color: var(--color-light-bg);
+            transform: translateY(-2px);
+        }
+
+        .event-date-box {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            flex-shrink: 0; /* Impede que a caixa de data diminua */
+            width: 80px;
+        }
+
+        .event-date-box .day {
+            font-size: 2em;
+            line-height: 1;
+            display: block;
+        }
+
+        .event-date-box .month {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .event-details {
+            flex-grow: 1;
+        }
+
+        .event-details h4 {
+            color: var(--color-text-light);
+            margin-bottom: 5px;
+            font-size: 1.4em;
+        }
+
+        .event-details .time-location {
+            font-size: 0.9em;
+            color: var(--color-text-fade);
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para eventos especiais (e.g., votação, reunião) */
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .tag-sessao {
+            background-color: rgba(229, 9, 20, 0.1); /* Vermelho translúcido */
+            color: var(--color-primary);
+        }
+        .tag-reuniao {
+            background-color: rgba(0, 123, 255, 0.1);
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="pedidos.html">📝 Solicitações</a> <a href="agenda.html" class="active">📅 Agenda</a> <a href="votacao.html">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <h2>📅 Agenda do FilmsClub</h2>
+                
+                <div class="card" style="margin-bottom: 30px;">
+                    <h3>Próximos Eventos</h3>
+                    <p>Fique por dentro das datas de exibição, votações e reuniões da comunidade.</p>
+                </div>
+
+                <ul class="event-list">
+                    
+                    <li class="event-item">
+                        <div class="event-date-box">
+                            <span class="day">15</span>
+                            <span class="month">OUT</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Sessão Especial: Blade Runner 2049 <span class="tag tag-sessao">SESSÃO</span></h4>
+                            <p class="time-location">20:00h | Local: Sala VIP - Bloco A</p>
+                            <p style="font-size: 0.9em;">O filme vencedor da última votação. Presença obrigatória para os fãs de Cyberpunk.</p>
+                            <a href="dashboard.html" style="color: var(--color-primary); font-size: 0.9em; display: inline-block; margin-top: 5px;">Confirmar Presença</a>
+                        </div>
+                    </li>
+                    
+                    <li class="event-item">
+                        <div class="event-date-box">
+                            <span class="day">20</span>
+                            <span class="month">OUT</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Início da Votação - Tema: Clássicos Noir</h4>
+                            <p class="time-location">A partir das 12:00h | Plataforma Online</p>
+                            <p style="font-size: 0.9em;">Escolha entre três grandes filmes do gênero Noir.</p>
+                            <a href="votacao.html" style="color: var(--color-primary); font-size: 0.9em; display: inline-block; margin-top: 5px;">Ir para Votação</a>
+                        </div>
+                    </li>
+
+                    <li class="event-item">
+                        <div class="event-date-box">
+                            <span class="day">25</span>
+                            <span class="month">OUT</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Reunião de Planejamento Mensal <span class="tag tag-reuniao">REUNIÃO</span></h4>
+                            <p class="time-location">19:30h | Local: Sala de Debates</p>
+                            <p style="font-size: 0.9em;">Discussão de novos temas, pedidos de membros e ideias para eventos futuros.</p>
+                        </div>
+                    </li>
+
+                    <li class="event-item">
+                        <div class="event-date-box">
+                            <span class="day">10</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Sessão Temática: O Vencedor do Clássicos Noir</h4>
+                            <p class="time-location">20:00h | Local: Sala VIP - Bloco A</p>
+                            <p style="font-size: 0.9em;">O filme escolhido na votação de Outubro.</p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 FilmsClub. Mantenha-se atualizado com a agenda.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

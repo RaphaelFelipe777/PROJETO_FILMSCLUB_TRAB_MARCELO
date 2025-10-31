@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Ativa - FilmsClub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .votation-grid {
+            /* Definido no style.css */
+            margin-top: 20px;
+        }
+        .movie-card {
+            border: none;
+            overflow: hidden;
+            padding: 0;
+            background-color: var(--color-medium);
+        }
+        .movie-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.9);
+        }
+        .movie-info {
+            padding: 15px;
+        }
+        .movie-info h4 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">FilmsClub</h1>
+            <div>
+                <a href="login.html" class="btn-mobile-login" style="font-size: 1em;">Sair</a>
+                <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" aria-label="Fechar Menu">&times;</button>
+            <h1 class="logo">FilmsClub</h1>
+            <nav>
+                <a href="index.html">🏠 Início</a>
+                <a href="dashboard.html">🚀 Dashboard</a>
+                <a href="pedidos.html">📝 Solicitações</a>
+                <a href="agenda.html">📅 Agenda</a>
+                <a href="votacao.html" class="active">🗳️ Votação</a>
+                <a href="historico.html">📜 Histórico</a>
+                <a href="admin.html">⚙️ Admin</a>
+            </nav>
+            <a href="login.html" class="logout btn-primary">Sair</a>
+        </aside>
+
+        <section class="main-content">
+            <div class="container" style="padding-top: 20px;">
+                <h2>🗳️ Votação Ativa (Tema: Cyberpunk)</h2>
+                
+                <div class="card" style="margin-bottom: 30px;">
+                    <p>Escolha o filme que será exibido na próxima sessão. Você tem apenas um voto!</p>
+                </div>
+
+                <div class="votation-grid">
+                    
+                    <div class="card movie-card">
+                        <img src="https://br.web.img2.acsta.net/newsv7/18/07/13/22/23/3280922.jpg" alt="Filme 1">
+                        <div class="movie-info">
+                            <h4>Akira (1988)</h4>
+                            <p style="color: var(--color-text-fade);">Anime distópico seminal.</p>
+                            <button class="btn-primary btn-vote" style="margin-top: 15px; background-color: #5cb85c;">VOTAR</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card movie-card">
+                        <img src="https://conteudo.imguol.com.br/c/entretenimento/4d/2017/04/07/ghost-in-the-shell-1491585638318_v2_1920x1080.jpg" alt="Filme 2">
+                        <div class="movie-info">
+                            <h4>Ghost in the Shell (1995)</h4>
+                            <p style="color: var(--color-text-fade);">Clássico sobre identidade e tecnologia.</p>
+                            <button class="btn-primary btn-vote" style="margin-top: 15px; background-color: #5cb85c;">VOTAR</button>
+                        </div>
+                    </div>
+
+                    <div class="card movie-card">
+                        <img src="https://m.media-amazon.com/images/S/pv-target-images/d6bba6da9ba1678490e7e50209021317d2a07024d12bf9eae36784709277d71f._SX1080_FMjpg_.jpg" alt="Filme 3">
+                        <div class="movie-info">
+                            <h4>Dredd (2012)</h4>
+                            <p style="color: var(--color-text-fade);">Ação intensa em Mega-City One.</p>
+                            <button class="btn-primary btn-vote" style="margin-top: 15px; background-color: #5cb85c;">VOTAR</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2024 FilmsClub. Participe da comunidade.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

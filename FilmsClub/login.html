@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CineClube</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para CENTRALIZAR o Login (Correção de Layout) */
+        .auth-content {
+            flex-grow: 1; 
+            display: flex; 
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            padding: 0;
+            min-height: calc(100vh - 120px); 
+        }
+        .auth-container {
+            max-width: 400px;
+            padding: 40px; 
+            background-color: var(--color-light-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .auth-container h2 {
+            text-align: center;
+            color: var(--color-primary);
+            margin-bottom: 30px; 
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .auth-toggle {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: var(--color-text-fade);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">CineClube</h1>
+        </div>
+    </header>
+
+    <div class="main-layout" style="padding-top: 0;"> 
+
+        <section class="main-content auth-content">
+            <div class="auth-container">
+                <form id="login-form">
+                    <h2>Acessar Plataforma</h2>
+                    <div class="form-group">
+                        <label for="email-login">E-mail ou Usuário</label>
+                        <input type="text" id="email-login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha-login">Senha</label>
+                        <input type="password" id="senha-login" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">Entrar</button>
+                    <a href="#" style="display: block; text-align: center; margin-top: 15px; font-size: 0.9em; color: var(--color-text-fade);">Esqueci minha senha</a>
+                </form>
+
+                <div class="auth-toggle">
+                    Não é membro? <a href="#" id="show-register" style="color: var(--color-primary); font-weight: bold;">Cadastre-se aqui</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 CineClube. Centralize seu clube.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
